@@ -1,0 +1,24 @@
+
+
+{% extends 'base.html' %}
+{% block app_content %}
+
+    <a class="btn btn-warning home" href="{{ url_for('index') }}">Вернуться на главную</a>
+    <a class="btn btn-info refresh" href="{{ url_for('live') }}">Обновить</a>
+    <p></p>
+    <div>
+        <table class="world">
+            {% for i in range(game.world|length) %}
+                <tr>
+                    {% for j in range(game.world[i]|length) %}
+                        {% if game.world[i][j] == 1 %}
+                            <td class="cell living-cell"></td>
+                        {% else %}
+                            <td class="cell"></td>
+                        {% endif %}
+                    {% endfor %}
+            {% endfor %}
+        </table>
+    </div>
+
+{% endblock %}

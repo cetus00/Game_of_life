@@ -1,0 +1,11 @@
+# Игнорировать байткод
+*.pyc
+*.pyo
+
+**/__pycache__/
+
+**/config/
+**/data/
+**/logs/
+**/bin/
+**/venv/
