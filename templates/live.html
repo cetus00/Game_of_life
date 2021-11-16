@@ -2,10 +2,12 @@
 
 {% extends 'base.html' %}
 {% block app_content %}
-
-    <a class="btn btn-warning home" href="{{ url_for('index') }}">Вернуться на главную</a>
-    <a class="btn btn-info refresh" href="{{ url_for('live') }}">Обновить</a>
-    <p></p>
+    <div>
+        <a class="btn btn-warning home" href="{{ url_for('index') }}">Вернуться на главную</a>
+        <div class="counter">{{ game.generation }}</div>
+        <a class="btn btn-info refresh" href="{{ url_for('live') }}">Обновить</a>
+    </div>
+    <br>
     <div>
         <table class="world">
             {% for i in range(game.world|length) %}
@@ -21,4 +23,8 @@
         </table>
     </div>
 
+{% endblock %}
+{% block scripts %}
+    {{ super() }}
+    <script  type='text/javascript'>setInterval(() => window.location.reload(), 1000)</script>
 {% endblock %}

@@ -28,7 +28,7 @@ td {
     align-items: center;
 }
 
-a, table {
+table {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -37,13 +37,11 @@ a, table {
 }
 
 .home {
-    top: 5%;
-    left: 45%;
+    display:inline;
 }
 
 .refresh {
-    top: 5%;
-    left: 55%;
+    display:inline;
 }
 
 .counter {
@@ -54,6 +52,7 @@ a, table {
     font-size: 30px;
     border: 1px solid indigo;
     border-radius: 50%;
+    display:inline;
 }
 
 
@@ -97,6 +96,8 @@ a, table {
 }
 
 .btn-primary {
+    top: 50%;
+    position: absolute;
     color: #fff;
     background-color: #337ab7;
     border-color: #2e6da4
