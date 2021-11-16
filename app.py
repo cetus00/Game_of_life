@@ -8,13 +8,15 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
+    GameOfLife(25, 25)
     return render_template("index.html")
 
-game = GameOfLife(25,25)
 
 @app.route('/live')
 def live():
-    game.form_new_generation()
+    game = GameOfLife()
+    if game.generation > 0:
+        game.form_new_generation()
     game.generation += 1
     return render_template("live.html", game=game)
 
